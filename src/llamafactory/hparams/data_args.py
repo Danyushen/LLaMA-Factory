@@ -17,6 +17,7 @@
 
 from dataclasses import asdict, dataclass, field
 from typing import Any, Literal, Optional
+import os.path as osp
 
 
 @dataclass
@@ -130,6 +131,7 @@ class DataArguments:
 
         self.dataset = split_arg(self.dataset)
         self.eval_dataset = split_arg(self.eval_dataset)
+        self.dataset_dir = osp.expanduser(self.dataset_dir)
 
         if self.media_dir is None:
             self.media_dir = self.dataset_dir

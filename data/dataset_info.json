@@ -1,4 +1,20 @@
 {
+  "virat": {
+    "file_name": "Virat_MCQ_train_text.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "videos": "videos"
+    }
+  },
+  "virat_eval": {
+    "file_name": "Virat_MCQ_validation_text.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "videos": "videos"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },

@@ -1,0 +1,24 @@
+### model
+model_name_or_path: output/qwen2_vl_virat_lora_sft_s  # Qwen/Qwen2-VL-7B-Instruct
+# adapter_name_or_path: output/qwen2_vl_virat_lora_sft_s
+image_max_pixels: 262144
+video_max_pixels: 16384
+trust_remote_code: true
+
+### method
+finetuning_type: lora
+
+### dataset
+task: virat_eval #mllm_demo,identity,alpaca_en_demo  # video: mllm_video_demo #virat
+task_dir: ~/LMUData
+lang: en
+n_shot: 5
+
+### output
+save_dir: saves/eval_qwen2_vl-7b_virat_lora_sft
+#logging_steps: 10
+#save_steps: 500
+plot_loss: true
+
+### eval
+batch_size: 4
