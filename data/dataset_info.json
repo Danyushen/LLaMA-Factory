@@ -1,6 +1,6 @@
 {
   "virat": {
-    "file_name": "Virat_MCQ_train_text.json",
+    "file_name": "Virat_MCQ_train.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages",
@@ -8,7 +8,7 @@
     }
   },
   "virat_eval": {
-    "file_name": "Virat_MCQ_validation_text.json",
+    "file_name": "Virat_MCQ_validation.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages",

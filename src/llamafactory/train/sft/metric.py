@@ -98,7 +98,7 @@ class ComputeSimilarity:
         if hasattr(self, "score_dict"):
             result = {k: float(np.mean(v)) for k, v in self.score_dict.items()}
 
-        self.score_dict = {"rouge-1": [], "rouge-2": [], "rouge-l": [], "bleu-4": []}
+        self.score_dict = {"rouge-1": [], "rouge-2": [], "rouge-l": [], "bleu-4": [], "acc": [], "A%": [], "B%": [], "C%": []}
         return result
 
     def __post_init__(self):
@@ -129,6 +129,20 @@ class ComputeSimilarity:
 
             bleu_score = sentence_bleu([list(label)], list(pred), smoothing_function=SmoothingFunction().method3)
             self.score_dict["bleu-4"].append(round(bleu_score * 100, 4))
+
+            self.score_dict["acc"].append(100 if pred[0].upper() == label[0].upper() else 0)
+
+            a = b = c = 0
+            if pred[0].upper() == 'A':
+                a = 100
+            if pred[0].upper() == 'B':
+                b = 100
+            if pred[0].upper() == 'C':
+                c = 100
+            self.score_dict["A%"].append(a)
+            self.score_dict["B%"].append(b)
+            self.score_dict["C%"].append(c)
+
 
         if compute_result:
             return self._dump()

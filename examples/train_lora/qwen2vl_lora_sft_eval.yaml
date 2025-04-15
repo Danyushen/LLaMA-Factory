@@ -15,7 +15,7 @@ lang: en
 n_shot: 5
 
 ### output
-save_dir: saves/eval_qwen2_vl-7b_virat_lora_sft
+save_dir: saves/eval_qwen2_vl-7b_virat_lora_sft_s
 #logging_steps: 10
 #save_steps: 500
 plot_loss: true
